@@ -1,6 +1,7 @@
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlus,
@@ -16,10 +17,10 @@ import {
   faKeyboard,
 } from "@fortawesome/free-regular-svg-icons";
 
+import routesConfig from "~/config/routes";
 import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
-
 import Menu from "~/components/Popper/Menu";
 import { IconMessage, IconNotification } from "~/components/Icons";
 import Image from "~/components/Image";
@@ -59,7 +60,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-
   const currentUser = true;
 
   const handleMenuChange = (menuItem) => {
@@ -91,15 +91,15 @@ function Header() {
     },
   ];
 
-  
-
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div className={cx("logo")}>
-          <img src={images.logo} alt="TikTokLogo" />
+          <Link to={routesConfig.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="TikTokLogo" />
+          </Link>{" "}
         </div>
-        <Search/>
+        <Search />
 
         <div className={cx("action")}>
           {currentUser ? (

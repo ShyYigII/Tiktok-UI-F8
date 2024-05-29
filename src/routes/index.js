@@ -1,25 +1,20 @@
 //Layouts
-import {HeaderOnlyLayout} from '~/components/Layout';
-
+import { HeaderOnlyLayout } from "~/components/Layout";
+import routesConfig from "~/config/routes";
 
 //public Routes
-import Home from '~/pages/Home/index'
+import Home from "~/pages/Home/index";
 import Following from "~/pages/Following";
 import Upload from "~/pages/Upload";
-import Profile from '~/pages/Profile';
+import Profile from "~/pages/Profile";
 
 const publicRoutes = [
-    {path: "/" , component: Home},
-    {path: "/following" , component: Following},
-    {path: "/upload" , component: Upload, layout: HeaderOnlyLayout},
-    {path: "/@:nickname" , component: Profile},
+  { path: routesConfig.home, component: Home },
+  { path: routesConfig.profile, component: Profile },
+  { path: routesConfig.following, component: Following },
+  { path: routesConfig.upload, component: Upload, layout: HeaderOnlyLayout },
+];
 
+const privateRoutes = [];
 
-
-]
-
-const privateRoutes = [
-    
-]
-
-export {publicRoutes, privateRoutes}
+export { publicRoutes, privateRoutes };
