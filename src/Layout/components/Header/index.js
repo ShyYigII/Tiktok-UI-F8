@@ -17,7 +17,7 @@ import {
   faKeyboard,
 } from "@fortawesome/free-regular-svg-icons";
 
-import routesConfig from "~/config/routes";
+import config from "~/config";
 import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
@@ -95,7 +95,7 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div className={cx("logo")}>
-          <Link to={routesConfig.home} className={cx("logo-link")}>
+          <Link to={config.routes.home} className={cx("logo-link")}>
             <img src={images.logo} alt="TikTokLogo" />
           </Link>{" "}
         </div>

@@ -1,6 +1,6 @@
 //Layouts
-import { HeaderOnlyLayout } from "~/components/Layout";
-import routesConfig from "~/config/routes";
+import { HeaderOnlyLayout } from "~/Layout";
+import config from "~/config";
 
 //public Routes
 import Home from "~/pages/Home/index";
@@ -9,10 +9,10 @@ import Upload from "~/pages/Upload";
 import Profile from "~/pages/Profile";
 
 const publicRoutes = [
-  { path: routesConfig.home, component: Home },
-  { path: routesConfig.profile, component: Profile },
-  { path: routesConfig.following, component: Following },
-  { path: routesConfig.upload, component: Upload, layout: HeaderOnlyLayout },
+  { path: config.routes.home, component: Home },
+  { path: config.routes.profile, component: Profile },
+  { path: config.routes.following, component: Following },
+  { path: config.routes.upload, component: Upload, layout: HeaderOnlyLayout },
 ];
 
 const privateRoutes = [];
