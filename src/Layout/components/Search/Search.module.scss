@@ -1,4 +1,3 @@
-
 .search,
 .search-result {
   width: 361px;
@@ -14,6 +13,7 @@
   border: 1px solid transparent;
 
   input {
+    padding-right: 40px;
     flex: 1;
     height: 100%;
     color: rgb(22, 24, 35);
@@ -60,15 +60,16 @@
   transform: translateY(-50%);
 }
 
-.loading{
+.loading {
   animation: spinner 1s linear infinite;
 }
 
-@keyframes spinner{
-  from{
-    transform:   translateY(-50%)    rotate(0);
-  }to{
-    transform:   translateY(-50%)   rotate(360deg);
+@keyframes spinner {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
   }
 }
 

@@ -19,9 +19,9 @@ const cx = classNames.bind(styles);
 function Search() {
   const [searchResult, setSearchResult] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [showResult, setShowResult] = useState(true);
+  const [showResult, setShowResult] = useState(false);
   const [loading, setLoading] = useState(false);
-  const deBounce = useDebounce(searchValue, 500);
+  const deBouncedValue = useDebounce(searchValue, 500);
 
   const inputRef = useRef();
 
@@ -44,26 +44,26 @@ function Search() {
   };
 
   useEffect(() => {
-    if (!deBounce.trim()) {
+    if (!deBouncedValue.trim()) {
       setSearchResult([]);
       return;
     }
     setLoading(true);
     // fetch(
     //   `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-    //     deBounce
+    //     deBouncedValue
     //   )}&type=less`
     // )
     setLoading(true);
     const fetchApi = async () => {
-      const result = await searchService.search(deBounce);
+      const result = await searchService.search(deBouncedValue);
       setSearchResult(result);
 
       setLoading(false);
     };
 
     fetchApi();
-  }, [deBounce]);
+  }, [deBouncedValue]);
 
   return (
     // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
