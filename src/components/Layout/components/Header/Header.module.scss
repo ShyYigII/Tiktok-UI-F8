@@ -3,11 +3,19 @@
   --search-height: 46px;
   --search-top-space: 9px;
   --search-button-width: 52px;
-  height: var(--default-layout-header-height, 60px);
-  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 10px;
   display: flex;
   justify-content: center;
+
+  height: var(--default-layout-header-height);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
   width: 100%;
+  background-color: var(--white);
 }
 
 .inner {
@@ -22,10 +30,9 @@
 .logo {
 }
 
-.logo-link{
+.logo-link {
   display: flex;
 }
-
 
 //action
 
@@ -41,8 +48,6 @@
   padding: 4px 8px;
   cursor: pointer;
 }
-
-
 
 .action-btn {
   background-color: transparent;
